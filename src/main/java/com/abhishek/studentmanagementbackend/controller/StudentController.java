@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/student")
+@RequestMapping("/api/v1/students")
 public class StudentController {
 
     private final StudentService studentService;
@@ -33,7 +33,7 @@ public class StudentController {
         return studentService.createStudent(student);
     }
 
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     public Student updateStudent(@PathVariable long id, @RequestBody Student student){
         return studentService.updateStudent(id, student);
     }

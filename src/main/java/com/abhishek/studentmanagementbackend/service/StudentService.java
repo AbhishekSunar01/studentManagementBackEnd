@@ -32,7 +32,9 @@ public class StudentService {
         Optional<Student> optionalStudent = studentRepo.findById(id);
         if(optionalStudent.isPresent()){
             Student studentToUpdate = optionalStudent.get();
-            studentToUpdate.setId(id);
+            studentToUpdate.setName(student.getName());
+            studentToUpdate.setSection(student.getSection());
+            studentToUpdate.setEmail(student.getEmail());
             studentRepo.save(studentToUpdate);
             return studentToUpdate;
         } else return null;
